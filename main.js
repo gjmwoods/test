@@ -51,36 +51,33 @@ function download(filename, text) {
   document.body.removeChild(element);
 }
 
-var aggregateTemplate=`package <REPLACE_WITH_PACKAGE>;
-
-import org.axonframework.commandhandling.CommandHandler;
-import org.axonframework.eventsourcing.EventSourcingHandler;
-import org.axonframework.modelling.command.AggregateIdentifier;
-import org.axonframework.spring.stereotype.Aggregate;
-
-import java.lang.invoke.MethodHandles;
-
-import static org.axonframework.modelling.command.AggregateLifecycle.apply;
-
-@Aggregate
-public class <REPLACE_WITH_AGGREGATE_NAME> {
-
-    @AggregateIdentifier
-    private String id;
-
-    public <REPLACE_WITH_AGGREGATE_NAME>() {
-        log.debug("empty constructor invoked");
-    }
-
-    @CommandHandler
-    public GiftCard(IssueCmd cmd) {
-      //todo implement logic
-    }
-
-    @EventSourcingHandler
-    public void on(IssuedEvt evt) {
-
-    }
-
+var aggregateTemplate=`package <REPLACE_WITH_PACKAGE>; \n
+\n
+import org.axonframework.commandhandling.CommandHandler;\n
+import org.axonframework.eventsourcing.EventSourcingHandler;\n
+import org.axonframework.modelling.command.AggregateIdentifier;\n
+import org.axonframework.spring.stereotype.Aggregate;\n
+\n
+import static org.axonframework.modelling.command.AggregateLifecycle.apply;\n
+\n
+@Aggregate\n
+public class <REPLACE_WITH_AGGREGATE_NAME> { \n
+\n
+    @AggregateIdentifier\n
+    private String id;\n
+\n
+    public <REPLACE_WITH_AGGREGATE_NAME>() {\n
+        log.debug("empty constructor invoked");\n
+    }\n
+\n
+    @CommandHandler\n
+    public GiftCard(IssueCmd cmd) {\n
+      //todo implement logic\n
+    }\n
+\n
+    @EventSourcingHandler\n
+    public void on(IssuedEvt evt) {\n
+\n
+    }\n
 }
 `
