@@ -27,7 +27,7 @@ rtb.onReady(() => {
           })))
 
           // Start file download.
-          download("hello.txt",aggregateTemplate");
+          download("hello.txt",aggregateTemplate);
 
           // Show success message
           rtb.showNotification('Axon Sources have been downloaded')
