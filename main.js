@@ -1,5 +1,3 @@
-var fs = require("fs");
-
 rtb.onReady(() => {
   rtb.initialize({
     extensionPoints: {
@@ -53,7 +51,7 @@ function download(filename, text) {
   document.body.removeChild(element);
 }
 
-aggregateTemplate=`package <REPLACE_WITH_PACKAGE>;
+var aggregateTemplate=`package <REPLACE_WITH_PACKAGE>;
 
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
