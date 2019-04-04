@@ -1,3 +1,5 @@
+var fs = require("fs");
+
 rtb.onReady(() => {
   rtb.initialize({
     extensionPoints: {
@@ -50,3 +52,5 @@ function download(filename, text) {
 
   document.body.removeChild(element);
 }
+
+aggregateTemplate=fs.readFileSync("./AggregateTemplate.java");
